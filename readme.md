@@ -52,3 +52,9 @@ docker run -it -d \
 ```
 
 You can now access Node RED via http://localhost:1880/
+
+## Login to Container
+
+```bash
+docker exec -it --user root nodered /bin/bash
+```
