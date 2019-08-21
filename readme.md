@@ -11,7 +11,6 @@ cd ~/docker
 mkdir node-red
 ```
 
-
 ### _Optional_: Create Docker Network
 
 I use the Docker Network `oracle_network` to put all my Oracle Containers on. If you do not have a network then run:
@@ -20,7 +19,32 @@ I use the Docker Network `oracle_network` to put all my Oracle Containers on. If
 docker network create oracle_network
 ```
 
+## Run Container
+
+_You do not need to maually build the image as the image is available on Docker Hub_
+
+```bash
+docker run -it -d \
+  -p 1880:1880 \
+  -v ~/docker/node-red:/data \
+  --name nodered \
+  --network=oracle_network \
+  martindsouza/node-red-oracle
+```
+
+
+You can now access Node RED via http://localhost:1880/
+
+## Login to Container
+
+```bash
+docker exec -it --user root nodered /bin/bash
+```
+
+
 ## Build Image
+
+You only need to do this if you want to build the image yourself
 
 ```bash
 # Go to a directory to store this repo
@@ -30,9 +54,9 @@ cd docker-node-red-oracle
 
 # Build image
 docker build -t node-red-oracle .
-```
+``#`
 
-## Create Container
+## Run Container
 
 _Note: If you do not have the oracle_network setup then remove that line_
 
@@ -45,10 +69,3 @@ docker run -it -d \
   node-red-oracle
 ```
 
-You can now access Node RED via http://localhost:1880/
-
-## Login to Container
-
-```bash
-docker exec -it --user root nodered /bin/bash
-```
