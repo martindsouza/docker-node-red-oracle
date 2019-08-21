@@ -54,9 +54,9 @@ cd docker-node-red-oracle
 
 # Build image
 docker build -t node-red-oracle .
-``#`
+```
 
-## Run Container
+### Run Container (from local image)
 
 _Note: If you do not have the oracle_network setup then remove that line_
 
