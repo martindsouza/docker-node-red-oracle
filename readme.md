@@ -4,9 +4,6 @@ This docker image starts with the base [Node-RED](https://github.com/node-red/no
 
 ## Prerequisites
 
-[Download](https://www.oracle.com/technetwork/database/database-technologies/instant-client/downloads/index.html) Oracle Instant Client Linux x86-64 - _Basic Lite Zip_
-([specific link](https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)). We'll assume this file is in `~/Downloads/instantclient-basiclite-linux.x64-18.3.0.0.0dbru.zip`
-
 Create a location to store the Node RED configuration files:
 
 ```
@@ -30,9 +27,6 @@ docker network create oracle_network
 # Ex: cd ~/Documents/Github/martindsouza
 git clone https://github.com/martindsouza/docker-node-red-oracle.git
 cd docker-node-red-oracle
-
-# Copy downloaded Instant Client
-cp ~/Downloads/instantclient-basiclite-linux.x64-18.3.0.0.0dbru.zip files/
 
 # Build image
 docker build -t node-red-oracle .
