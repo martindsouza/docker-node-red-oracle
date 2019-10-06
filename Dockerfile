@@ -1,4 +1,4 @@
-FROM nodered/node-red-docker:latest
+FROM nodered/node-red-docker:0.20.8
 LABEL MAINTAINER="Martin"
 
 ENV \
